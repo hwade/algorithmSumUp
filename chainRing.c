@@ -10,77 +10,78 @@
 */
 
 struct Node{
-  int data;
-  struct Node *next;
+	int data;
+	struct Node *next;
 };
 
 int main()
 {
-  int LEN = 30, POS = 5;
-  struct Node *head, *p, *g, *entrance;
+	int LEN = 30, POS = 5;
+	struct Node *head, *p, *g, *entrance;
 
-  head = (Node *) malloc(sizeof(Node *));  // 头结点
-  head->data = -1;
-  head->next = NULL;
-  g = head;
+	head = (Node *) malloc(sizeof(Node *));	// 头结点
+	head->data = -1;
+	head->next = NULL;
+	g = head;
 
-  // 无环部分，尾插法，顺序插入
-  for(int i=0; i<LEN; i++){
-    p = (Node *) malloc(sizeof(Node *));
-    p->data = i;
-    p->next = NULL;
-    g->next = p;
-    g = p;
-    if(i==POS-1)
-      entrance = p; // 记录环的入口
-    if(i==LEN-1){
-      p->next = entrance; // 形成环
-      //printf("%d->%d(环)", i, entrance->data);
-    }
-    //else
-    //  printf("%d->", i);
-  }
+	// 无环部分，尾插法，顺序插入
+	for(int i=0; i<LEN; i++){
+		p = (Node *) malloc(sizeof(Node *));
+		p->data = i;
+		p->next = NULL;
+		g->next = p;
+		g = p;
+		if(i==POS-1)
+			entrance = p; // 记录环的入口
+		if(i==LEN-1){
+			p->next = entrance; // 形成环
+			//printf("%d->%d(环)", i, entrance->data);
+		}
+		//else
+		//	printf("%d->", i);
+	}
 
-  p = head->next; // 起始第一个节点，p每次走1步
-  g = head->next; // 起始第一个节点，g每次走2步
-  int k = 0; // k为环的长度
-  while(p){
-    printf("(%d,%d)",p->data,g->data);
-    p = p->next;
-    g = g->next->next;
-    if(p == g)
-      break; // 第一次在环中任意位置相遇
-  }
+	p = head->next; // 起始第一个节点，p每次走1步
+	g = head->next; // 起始第一个节点，g每次走2步
 
-  while(p){
-    p = p->next;
-    k++;
-    printf("(%d,%d)",p->data,g->data);
-    if(p==g)
-      break; // 只移动p第二次遇到g时，k为一圈的长度
-  }
+	while(p){
+		printf("(%d,%d)",p->data,g->data);
+		p = p->next;
+		g = g->next->next;
+		if(p == g)
+			break; // 第一次在环中任意位置相遇
+	}
 
-  printf("\np走了k=%d后p,g再次相遇在(%d,%d)\n", k, p->data, g->data);
-  printf("链长: %d, 真实入口位置: %d, k(环长): %d", LEN, POS, k);
+	int k = 0; // k为环的长度
+	while(p){
+		p = p->next;
+		k++;
+		printf("(%d,%d)",p->data,g->data);
+		if(p==g)
+			break; // 只移动p第二次遇到g时，k为一圈的长度
+	}
 
-  if(k>0){
-    p = head->next;
-    g = head->next;
-    for(int i=0; i<k; i++){
-      p = p->next; // 先让p走k步，pg一起按一步走直到相遇的地方为环
-    }
+	printf("\np走了k=%d后p,g再次相遇在(%d,%d)\n", k, p->data, g->data);
+	printf("链长: %d, 真实入口位置: %d, k(环长): %d", LEN, POS, k);
 
-    int pos = 1;
-    while(p){
-      if(p == g){
-        printf("\n找到入口位置: %d\n", pos);
-        return 1;
-      }
-      p = p->next;
-      g = g->next;
-      pos++;
-    }
-  }
-  printf("There is no circle in the link!");
-  return 1;
+	if(k>0){
+		p = head->next;
+		g = head->next;
+		for(int i=0; i<k; i++){
+			p = p->next; // 先让p走k步，pg一起按一步走直到相遇的地方为环
+		}
+
+		int pos = 1;
+		while(p){
+			if(p == g){
+				printf("\n找到入口位置: %d\n", pos);
+				return 1;
+			}
+			p = p->next;
+			g = g->next;
+			pos++;
+		}
+	}
+	printf("There is no circle in the link!");
+	return 1;
 }
