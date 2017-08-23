@@ -9,7 +9,7 @@ float add(int n){
     float denominator, sum=0.0;
     for(int i=1; i<=n; i++){
         if(i==1){
-	        denominator = 1.0;
+            denominator = 1.0;
             printf("1/1");
         }else{
             denominator *= (2*i-1)*(2*i-2);
