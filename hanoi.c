@@ -3,7 +3,7 @@
 /*
 汉诺塔，将盘子从start杆移动到end杆
 第一步，将start杆上n-1个饼借助end杆移动到swap杆
-第二步，将start杆上最后一个饼移动到end杆上
+第二步，将start杆上最后一个饼移动到end杆上，输出
 第三步，将swap杆上n-1个饼移借助start动到end上
 */
 void han(char start, char end, char swap,int n){
