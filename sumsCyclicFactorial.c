@@ -8,23 +8,27 @@
 float add(int n){
     float denominator, sum=0.0;
     for(int i=1; i<=n; i++){
-		if(i==1)
+        if(i==1){
 	        denominator = 1.0;
-		else
-			denominator *= (2*i-1)*(2*i-2);
-		printf("%.6f ", denominator);
+            printf("1/1");
+        }else{
+            denominator *= (2*i-1)*(2*i-2);
+            printf(" %c 1/%.0f", (i%2 == 0)?'+':'-', denominator);
+        }
         sum += ((i%2 == 0)?-1.0:1.0)/denominator;
     }
     return sum;
 }
 int main(){
     int n;
+    printf("Input n(ctrl + c exit): ");
     while(scanf("%d",&n)!=EOF){
         if(n<=0){
             printf("Input Error");
             continue;
         }
-        printf("result: %.6f\n",add(n));
+        printf(" = %.6f\n",add(n));
+        printf("Input n(ctrl + c exit): ");
     }
     return 0;
 }
