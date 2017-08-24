@@ -4,6 +4,8 @@
 
 
 ## 链表
+* [两个链表分别按位存储两个数，返回两个数相加结果](https://github.com/hwade/algorithmSumUp/blob/master/addTwoNum.c)
+
 * [输出非重复数组的全排列](https://github.com/hwade/algorithmSumUp/blob/master/permutation.c)
 
 * [判断一个链表是否有环，有环则找出环的入口](https://github.com/hwade/algorithmSumUp/blob/master/chainRing.c)
