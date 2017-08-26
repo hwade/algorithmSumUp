@@ -3,6 +3,7 @@
 ## 数字规律
 * [求1/1!-1/3!+1/5!-.....+(-1)^(n+1)/(2n-1)!](https://github.com/hwade/algorithmSumUp/blob/master/digitPattern/sumsCyclicFactorial.c)
 * [阿里2017秋招算法岗位笔试题：菜鸟仓储，从递增数中找出储物格的编号](https://github.com/hwade/algorithmSumUp/blob/master/digitPattern/caiNiaoGarage.c)
+* [从一个数中删除n位，使删除后的数字是最大结果](https://github.com/hwade/algorithmSumUp/blob/master/digitPattern/keepMaxNum.cpp)
 
 ## 链表
 * [两个链表分别按位存储两个数，返回两个数相加结果](https://github.com/hwade/algorithmSumUp/blob/master/linkedList/addTwoNum.c)
