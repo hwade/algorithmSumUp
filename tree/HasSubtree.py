@@ -44,7 +44,6 @@ A2、如果不等，找大树的左右孩子结点当根结点，递归到A步�
          #左右同时相等时
          return Solution.Subtree(self, pRoot1.left, pRoot2.left) and \
      Solution.Subtree(self, pRoot1.right, pRoot2.right)        
-
  
 '''
 为了简化代码，提高代码的阅读障碍，可以使用短路法
