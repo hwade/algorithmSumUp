@@ -17,4 +17,13 @@
 * [给定节点数N和父亲孩子节点的连接关系，求多叉树树高](https://github.com/hwade/algorithmSumUp/blob/master/tree/treeHeight.c)
 
 ## 动态规划
+* [流水线调度](https://github.com/hwade/algorithmSumUp/blob/master/dynamicProgram/als.c)
+
+## 减治策略
+* [将M表示成N个数相加，找出有多少种表示方法](https://github.com/hwade/algorithmSumUp/blob/master/reduceAndConquer/addNum.c)
+* [汉诺塔](https://github.com/hwade/algorithmSumUp/blob/master/reduceAndConquer/hanoi.c)
+
+## 图搜索
+* [单源最短路径+保存节点信息](https://github.com/hwade/algorithmSumUp/blob/master/graph/dijkstra_stuff.cpp)
+* [特殊加权单源最短路径：到达目标节点的最小时间](https://github.com/hwade/algorithmSumUp/blob/master/graph/minTraverseTime.c)
 
