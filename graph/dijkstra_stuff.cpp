@@ -3,7 +3,13 @@
 #include<malloc.h>
 #include<vector>
 #include<map>
+/*
+  大疆2017秋招研发岗
+  问题：m个物品散落在n个地点，这n个地点间有L个路径相连，小明需要从起始位置x尽快去到丢失最重要物品的位置y,路上尽量把能捡起的东西都捡起来，但是不能捡相同编号的物品，求小明从x到y的最短路径长度和最短路径上能捡到的物品个数。
+  思路：
+    1.dijkstra算法求得单源最短路径，使用数组表示的孩子父亲表示法多叉树保存路径，最后从目标节点回溯到起始节点，并用哈希表保存存放的物品编号。
 
+ */
 using namespace std;
 
 struct Node{
@@ -84,8 +90,6 @@ int main(){
 			parent[i] = start; // 初始化start的直连节点的父亲表示
 	}
 
-	map<int, int> package; // 小明的背包，用来捡起散落的物品
-	map<int, int>::iterator iter;
 	int minNode, minValue; // 记录U集合中最短路径节点和路径大小
 	//int lastNode = start; // 保存当前节点的父亲节点，刚加入S的节点作为父亲
 	int count = 0; // 记录添加最短路径的次数
@@ -113,6 +117,8 @@ int main(){
 	}
 
 	int stuff; // 加入最短路径过程中
+	map<int, int> package; // 小明的背包，用来捡起散落的物品
+	map<int, int>::iterator iter;
 	for(int i=target; i>=0; i = parent[i]){
 		for(int s=0; s<nodeStuff[i].stuff.size(); s++){
 			stuff = nodeStuff[i].stuff[s];
