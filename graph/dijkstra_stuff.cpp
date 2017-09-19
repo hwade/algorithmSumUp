@@ -105,7 +105,7 @@ int main(){
 			if(matrix[minNode][i] < INT_MAX && S[minNode] + matrix[minNode][i] < U[i]){
 				// 刚加入S集合的节点minNode到节点i的距离不为无穷大 
 				// 且 start节点到minNode的距离加上minNode到i的距离比当前start到i的距离小
-				U[i] = matrix[start][minNode] + matrix[minNode][i];
+				U[i] = S[minNode] + matrix[minNode][i];
 				parent[i] = minNode; // 若存在minNode使start->minNode->i路径最短，则更新minNode为i的父亲节点
 			}
 		}
